@@ -1,0 +1,10 @@
+<h1>Flexible Payment</h1>
+
+<% @rate = (@apr / 100) / 12 %>
+<% @nper = @num_yrs * 12 %>
+<% @mo_pay = (@rate * @principal) / (1 - ((1 + @rate)**-@nper)) %>
+    
+<h2>
+    A <%= @num_yrs %> year loan of $<%= @principal %>, with an annual interest rate of <%= @apr %>%, requires a monthly payment of 
+    <%= @mo_pay %>.    
+</h2>

@@ -9,4 +9,17 @@ class CalcController < ApplicationController
     
     render("calc_templates/flexible_square_root.html.erb")
   end
+  def flex_payment
+    @apr = params.fetch("apr").to_f/100
+    @num_yrs = params.fetch("num_yrs").to_f
+    @principal = params.fetch("principal").to_f
+    
+    render("calc_templates/flexible_payment.html.erb")
+  end
+  def flex_random
+    @min = params.fetch("min").to_i
+    @max = params.fetch("max").to_i
+     
+    render("calc_templates/flexible_random.html.erb")
+  end  
 end
