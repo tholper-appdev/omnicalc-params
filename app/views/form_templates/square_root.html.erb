@@ -1,3 +1,15 @@
-<h1>Square Root</h1>
+<h1>Square Root Calculation</h1>
 
-<h2>The square root of <%= @num %> is <%= Math.sqrt(@num.to_i) %></h2>
+<form action="/square_root/results">
+  <div>
+    <label for="number_input">
+      Enter a number
+    </label>
+
+    <input id="number_input" text="text" name="user_number" placeholder="What number do you want to square root?">
+  </div>
+
+  <button>
+    Calculate square root
+  </button>
+</form>

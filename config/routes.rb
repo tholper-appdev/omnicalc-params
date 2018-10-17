@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     get("/random/new",                                  { :controller => "form", :action => "random" })
 
     get("/square/results",                              { :controller => "form", :action => "square_form_results" })
-    
+    get("/square_root/results",                         { :controller => "form", :action => "square_root_form_results" })
 end

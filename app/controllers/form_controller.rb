@@ -1,26 +1,29 @@
 class FormController < ApplicationController
   def square
-
     render("form_templates/square.html.erb")
   end
   def square_form_results
-    
     if params.fetch("user_number")
       @num = params.fetch("user_number").to_f
     else
       @num = 0
     end
-    
     render("form_templates/square_results.html.erb")
   end  
   
-  
   def square_root
-    #@num = params.fetch("the_num")
-    @num = 0
-    
     render("form_templates/square_root.html.erb")
   end
+  def square_root_form_results
+    if params.fetch("user_number")
+      @num = params.fetch("user_number").to_f
+    else
+      @num = 0
+    end
+    render("form_templates/square_root_results.html.erb")
+  end   
+  
+  
   def payment
     #@apr = params.fetch("apr").to_f/100
     #@num_yrs = params.fetch("num_yrs").to_i
