@@ -1,0 +1,10 @@
+<h1>Payment</h1>
+
+<% @rate = (@apr / 100) / 12 %>
+<% @nper = @num_yrs * 12 %>
+<% @mo_pay = (@rate * @principal) / (1 - ((1 + @rate)**-@nper)) %>
+    
+<h2>
+    A <%= @num_yrs %> year loan of <%= number_to_currency(@principal, precision: 0) %>, with an annual interest rate of <%= number_to_percentage(@apr, precision: 2) %>, requires a monthly payment of 
+    <%= number_to_currency(@mo_pay, precision: 2) %>.    
+</h2>
