@@ -6,7 +6,7 @@ class FormController < ApplicationController
   def square_form_results
     
     if params.fetch("user_number")
-      @num = params.fetch("user_number")
+      @num = params.fetch("user_number").to_f
     else
       @num = 0
     end
