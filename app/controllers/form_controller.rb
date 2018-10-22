@@ -23,25 +23,32 @@ class FormController < ApplicationController
     render("form_templates/square_root_results.html.erb")
   end   
   
-  
-  def payment
-    #@apr = params.fetch("apr").to_f/100
-    #@num_yrs = params.fetch("num_yrs").to_i
-    #@principal = params.fetch("principal").to_i
-    @apr = 0
-    @num_yrs = 0
-    @principal = 0
-    
-    render("form_templates/payment.html.erb")
-  end
   def random
-    #@min = params.fetch("min").to_i
-    #@max = params.fetch("max").to_i
-    @min = 0
-    @max = 0
-     
     render("form_templates/random.html.erb")
   end 
-  
+  def random_results
+    if params.fetch("user_min")
+      @min = params.fetch("user_min").to_f
+    else
+      @min = 0
+    end
+    if params.fetch("user_max")
+      @max = params.fetch("user_max").to_f
+    else
+      @max = 0
+    end     
+    render("form_templates/random_results.html.erb")
+  end   
+
+  def payment
+    render("form_templates/payment.html.erb")
+  end   
+  def payment_results
+    @apr = params.fetch("user_apr").to_f
+    @num_yrs = params.fetch("user_years").to_i
+    @principal = params.fetch("user_pv").to_i
+    
+    render("form_templates/payment_results.html.erb")
+  end
 
 end

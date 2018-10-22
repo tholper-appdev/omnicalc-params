@@ -6,10 +6,15 @@ Rails.application.routes.draw do
     get("/flexible/random/:min/:max",                   { :controller => "calc", :action => "flex_random" })
     
     get("/square/new",                                  { :controller => "form", :action => "square" })
-    get("/square_root/new",                             { :controller => "form", :action => "square_root" })
-    get("/payment/new",                                 { :controller => "form", :action => "payment" })
-    get("/random/new",                                  { :controller => "form", :action => "random" })
-
     get("/square/results",                              { :controller => "form", :action => "square_form_results" })
+    
+    get("/square_root/new",                             { :controller => "form", :action => "square_root" })
     get("/square_root/results",                         { :controller => "form", :action => "square_root_form_results" })
+
+    get("/random/new",                                  { :controller => "form", :action => "random" })
+    get("/random/results",                              { :controller => "form", :action => "random_results" })
+        
+    get("/payment/new",                                 { :controller => "form", :action => "payment" })
+    get("/payment/results",                             { :controller => "form", :action => "payment_results" })
+    
 end
